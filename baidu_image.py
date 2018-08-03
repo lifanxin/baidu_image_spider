@@ -120,10 +120,6 @@ def download_image(title, url, file_path):
                 with open(image_file_path, 'wb') as f:
                     for chunk in image_file.iter_content(chunk_size=1024*16):
                         f.write(chunk)
-
-def ctrl_c(a, b):
-    print(a, b)
-    os.exit(0)
                 
 if __name__ == '__main__':
     your_word = input("请输入关键词: ")
@@ -154,6 +150,6 @@ if __name__ == '__main__':
         for i in get_contact_word(webpage):
             download_word.append(i)
 
-#ctrl+c 的问题
+#命令行ctrl+c无法中断
 #使用python自带IDLE,子进程不会打印出信息,使用命令行运行程序可以输出信息
 # 图片会下载重复？？
